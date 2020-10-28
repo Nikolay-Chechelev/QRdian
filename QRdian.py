@@ -1,3 +1,7 @@
+# pip3 install pygame==2.0.0.dev12
+#pip3 install pyzbar
+# sudo apt-get install git curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0
+
 import pygame.camera
 from pyzbar import pyzbar
 from PIL import Image

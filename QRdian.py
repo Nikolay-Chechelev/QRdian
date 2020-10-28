@@ -20,9 +20,9 @@ def routine(*args):
         print(2)
         image = cam.get_image()
 
-        window = pygame.display.set_mode((w, h), pygame.RESIZABLE)
-        window.blit(image, (0, 0))
-        pygame.display.update()
+        # window = pygame.display.set_mode((w, h), pygame.RESIZABLE)
+        # window.blit(image, (0, 0))
+        # pygame.display.update()
         print(4)
         img = pygame.image.tostring(image, "RGBA", False)
         print(5)

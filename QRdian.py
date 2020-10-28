@@ -30,7 +30,7 @@ def routine(*args):
         print(6)
         code = pyzbar.decode(code_image)
         print(code)
-        #time.sleep(0.5)
+        time.sleep(2)
 
 
 

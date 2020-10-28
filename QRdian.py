@@ -24,7 +24,7 @@ def routine(*args):
         print(2)
         image = cam.get_raw()
         print(4)
-        img = pygame.image.tostring(image, "RGBA", False)
+        #img = pygame.image.tostring(image, "RGBA", False)
         print(5)
         code_image = Image.frombytes("RGBA", (w, h), img)
         print(6)

@@ -18,7 +18,6 @@ pygame.camera.init()
 
 def routine(*args):
     cam = pygame.camera.Camera("/dev/video0", (w, h))
-    cam.
     print(1)
     while 1:
         print(2)

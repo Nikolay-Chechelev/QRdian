@@ -32,6 +32,7 @@ def routine(*args):
         print(code)
         time.sleep(0.5)
         cam.stop()
+        pygame.quit()
 
 
 

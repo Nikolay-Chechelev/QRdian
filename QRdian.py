@@ -30,11 +30,13 @@ def routine(*args):
         print(6)
         code = pyzbar.decode(code_image)
         print(code)
-        time.sleep(0.5)
+        #time.sleep(0.5)
 
 
 
-x = threading.Thread(target=routine, args=(None,))
-x.start()
-while 1:
-    time.sleep(1)
+# x = threading.Thread(target=routine, args=(None,))
+# x.start()
+# while 1:
+#     time.sleep(1)
+
+routine('q')

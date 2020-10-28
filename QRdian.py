@@ -16,6 +16,9 @@ cam.get_image()
 image = cam.get_image()
 cam.stop()
 
+while 1:
+    pass
+
 window = pygame.display.set_mode((w, h), pygame.RESIZABLE)
 window.blit(image, (0, 0))
 pygame.display.update()

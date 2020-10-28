@@ -19,11 +19,10 @@ pygame.camera.init()
 def routine(*args):
     cam = pygame.camera.Camera("/dev/video0", (w, h))
     print(1)
+    cam.start()
     while 1:
         print(2)
-        cam.start()
         image = cam.get_raw()
-        cam.stop()
         print(4)
         img = pygame.image.tostring(image, "RGBA", False)
         print(5)

@@ -11,13 +11,11 @@ pygame.init()
 pygame.camera.init()
 
 cam = pygame.camera.Camera("/dev/video0", (w, h))
+print(1)
+cam.start()
 while 1:
-    print(1)
-    cam.start()
     print(2)
     image = cam.get_image()
-    print(3)
-    cam.stop()
 
     # window = pygame.display.set_mode((w, h), pygame.RESIZABLE)
     # window.blit(image, (0, 0))
@@ -30,3 +28,6 @@ while 1:
     code = pyzbar.decode(code_image)
     print(code)
     time.sleep(0.5)
+
+print(3)
+cam.stop()

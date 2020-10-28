@@ -8,6 +8,7 @@ import pygame.camera
 from pyzbar import pyzbar
 from PIL import Image
 import time
+import cv2
 import threading
 
 w = 640

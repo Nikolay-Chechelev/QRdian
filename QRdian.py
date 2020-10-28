@@ -13,15 +13,14 @@ import threading
 w = 640
 h = 480
 
+pygame.camera.init()
 
 
 def routine(*args):
-
+    cam = pygame.camera.Camera("/dev/video0", (w, h))
     print(1)
+    cam.start()
     while 1:
-        pygame.camera.init()
-        cam = pygame.camera.Camera("/dev/video0", (w, h))
-        cam.start()
         print(2)
         image = cam.get_image()
         print(4)
@@ -32,8 +31,6 @@ def routine(*args):
         code = pyzbar.decode(code_image)
         print(code)
         time.sleep(0.5)
-        cam.stop()
-        pygame.quit()
 
 
 

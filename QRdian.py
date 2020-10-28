@@ -12,7 +12,7 @@ pygame.init()
 pygame.camera.init()
 
 
-def routine(**kwargs):
+def routine(*args):
     cam = pygame.camera.Camera("/dev/video0", (w, h))
     print(1)
     cam.start()

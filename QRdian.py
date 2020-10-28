@@ -8,7 +8,6 @@ import pygame.camera
 from pyzbar import pyzbar
 from PIL import Image
 import time
-import cv2
 import threading
 
 w = 640
@@ -19,11 +18,12 @@ pygame.camera.init()
 
 def routine(*args):
     cam = pygame.camera.Camera("/dev/video0", (w, h))
+    cam.
     print(1)
     while 1:
         print(2)
         cam.start()
-        image = cam.get_image()
+        image = cam.get_raw()
         cam.stop()
         print(4)
         img = pygame.image.tostring(image, "RGBA", False)

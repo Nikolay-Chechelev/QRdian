@@ -16,10 +16,11 @@ h = 480
 
 
 def routine(*args):
-    cam = pygame.camera.Camera("/dev/video0", (w, h))
+
     print(1)
     while 1:
         pygame.camera.init()
+        cam = pygame.camera.Camera("/dev/video0", (w, h))
         cam.start()
         print(2)
         image = cam.get_image()

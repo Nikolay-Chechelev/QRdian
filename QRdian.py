@@ -13,8 +13,8 @@ pygame.camera.init()
 cam = pygame.camera.Camera("/dev/video0", (w, h))
 while 1:
     cam.start()
-    cam.get_image()
-    cam.get_image()
+    #cam.get_image()
+    #cam.get_image()
     image = cam.get_image()
     cam.stop()
 

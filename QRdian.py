@@ -20,9 +20,10 @@ def routine(*args):
     cam = pygame.camera.Camera("/dev/video0", (w, h))
     print(1)
     while 1:
-        cam.start()
         print(2)
+        cam.start()
         image = cam.get_image()
+        cam.stop()
         print(4)
         img = pygame.image.tostring(image, "RGBA", False)
         print(5)
@@ -30,7 +31,6 @@ def routine(*args):
         print(6)
         code = pyzbar.decode(code_image)
         print(code)
-        cam.stop()
         time.sleep(2)
 
 

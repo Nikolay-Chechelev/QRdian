@@ -15,7 +15,7 @@
 
 import pygame.camera as camera
 import pygame.image as image
-from PIL.Image import Image
+from PIL import Image
 from pyzbar import pyzbar
 
 camera.init()
@@ -28,7 +28,7 @@ img = cam.get_image()
 cam.stop()
 
 img = image.tostring(img, "RGBA", False)
-
+img = Image.frombytes("RGBA", (640, 480), img)
 code = pyzbar.decode(img)
 print(code)
 

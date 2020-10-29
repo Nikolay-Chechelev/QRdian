@@ -27,8 +27,8 @@ cam.start()
 img = cam.get_image()
 cam.stop()
 
-img = image.tostring(img, "RGBA", False)
-img = Image.frombytes("RGBA", (640, 480), img)
+img = image.tostring(img, "RGB", False)
+img = Image.frombytes("RGB", (640, 480), img)
 code = pyzbar.decode(img)
 print(code)
 

@@ -15,9 +15,10 @@
 import cv2
 
 cam = cv2.VideoCapture(0)
-s, code_image = cam.read()
-detector = cv2.QRCodeDetector()
-data = detector.detectAndDecode(code_image)
-print(data)
+for i in range(20):
+    s, code_image = cam.read()
+    detector = cv2.QRCodeDetector()
+    data = detector.detectAndDecode(code_image)[0]
+    print(data)
 cam.release()
 

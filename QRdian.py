@@ -17,6 +17,12 @@ import pygame.camera as camera
 import pygame.image as image
 from PIL import Image
 from pyzbar import pyzbar
+import os, time
+
+os.system('sudo rmmod uvcvideo')
+time.sleep(2)
+os.system('sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
+time.sleep(2)
 
 camera.init()
 
@@ -31,6 +37,3 @@ img = image.tostring(img, "RGB", False)
 img = Image.frombytes("RGB", (640, 480), img)
 code = pyzbar.decode(img)
 print(code)
-
-
-

@@ -59,9 +59,8 @@ from pyzbar import pyzbar
 
 cam = cv2.VideoCapture(0)
 s, code_image = cam.read()
-
-code = pyzbar.decode(code_image)
-print(code)
-print(type(s), s, type(code_image), code_image)
+detector = cv2.QRCodeDetector()
+data = detector.detectAndDecode(code_image)
+print(data)
 
 

@@ -23,6 +23,7 @@ import os
 cam = cv2.VideoCapture(0)
 #for i in range(20):
 s, code_image = cam.read()
+cv2.imshow("img", code_image)
 detector = cv2.QRCodeDetector()
 data = detector.detectAndDecode(code_image)
 print(data)

@@ -16,13 +16,13 @@ import cv2
 import time
 import os
 
-os.system('rmmod uvcvideo')
-os.system('modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
+os.system('sudo rmmod uvcvideo')
+os.system('sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
 cam = cv2.VideoCapture(0)
-for i in range(20):
-    s, code_image = cam.read()
-    detector = cv2.QRCodeDetector()
-    data = detector.detectAndDecode(code_image)
-    print(data)
+#for i in range(20):
+s, code_image = cam.read()
+detector = cv2.QRCodeDetector()
+data = detector.detectAndDecode(code_image)
+print(data)
 cam.release()
 

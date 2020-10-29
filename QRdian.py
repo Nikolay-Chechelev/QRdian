@@ -30,10 +30,12 @@ cam_list = camera.list_cameras()
 
 cam = camera.Camera(cam_list[0], (640, 480))
 cam.start()
-img = cam.get_image()
-cam.stop()
 
-img = image.tostring(img, "RGB", False)
-img = Image.frombytes("RGB", (640, 480), img)
-code = pyzbar.decode(img)
-print(code)
+#cam.stop()
+while 1:
+    cam.get_image()
+    img = cam.get_image()
+    img = image.tostring(img, "RGB", False)
+    img = Image.frombytes("RGB", (640, 480), img)
+    code = pyzbar.decode(img)
+    print(code)

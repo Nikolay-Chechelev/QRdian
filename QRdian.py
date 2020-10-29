@@ -55,9 +55,13 @@
 # routine('q')
 
 import cv2
-cam = cv2.VideoCapture(0)
-s, im = cam.read()
+from pyzbar import pyzbar
 
-print(type(s), s, type(im), im)
+cam = cv2.VideoCapture(0)
+s, code_image = cam.read()
+
+code = pyzbar.decode(code_image)
+print(code)
+print(type(s), s, type(code_image), code_image)
 
 

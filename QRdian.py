@@ -18,8 +18,9 @@ camera.init()
 
 
 def routine(*args):
-    print(camera.list_cameras())
-    cam = camera.Camera("/dev/video1", (w, h))
+    cam_list = camera.list_cameras()
+    print(cam_list)
+    cam = camera.Camera(cam_list[0], (w, h))
     print(1)
     cam.start()
     while 1:

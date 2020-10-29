@@ -22,20 +22,9 @@ import os
 #os.system('sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
 #time.sleep(2)
 cam = cv2.VideoCapture(0)
-gain = 174.0
-cam.set(cv2.CAP_PROP_GAIN, gain)
+#brightness = 200.0
+#cam.set(cv2.CAP_PROP_BRIGHTNESS, brightness)
 
-brightness = 200.0
-cam.set(cv2.CAP_PROP_BRIGHTNESS, brightness)
-
-contrast = 67.0
-cam.set(cv2.CAP_PROP_CONTRAST, contrast)
-
-saturation = 85
-cam.set(cv2.CAP_PROP_SATURATION, saturation)
-
-exposure = -9
-cam.set(cv2.CAP_PROP_EXPOSURE, exposure)
 
 f, code_image = cam.read()
 time.sleep(2)

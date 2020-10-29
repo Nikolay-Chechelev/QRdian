@@ -22,9 +22,8 @@ def routine(*args):
     cam.start()
     while 1:
         print(2)
-        image = cam.get_raw()
+        image = cam.get_image()
         print(4)
-        print(image)
         img = pygame.image.tostring(image, "RGBA", False)
         print(5)
         code_image = Image.frombuffer("RGBA", (w, h), image)

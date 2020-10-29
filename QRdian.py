@@ -4,20 +4,21 @@
 # sudo apt-get install git curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0
 # sudo apt-get install -y build-essential libzbar-dev
 
-import pygame.camera
+from pygame import camera
 from pyzbar import pyzbar
 from PIL import Image
 import time
+
 import threading
 
 w = 640
 h = 480
 
-pygame.camera.init()
+camera.init()
 
 
 def routine(*args):
-    cam = pygame.camera.Camera("/dev/video0", (w, h))
+    cam = camera.Camera("/dev/video0", (w, h))
     print(1)
     cam.stop()
     cam.start()

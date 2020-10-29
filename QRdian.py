@@ -58,4 +58,6 @@ import cv2
 cam = cv2.VideoCapture(0)
 s, im = cam.read()
 
+print(type(s), s, type(im), im)
+
 

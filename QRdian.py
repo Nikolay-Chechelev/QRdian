@@ -15,7 +15,7 @@
 import cv2
 import time
 import os
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 #os.system('sudo rmmod uvcvideo')
 #time.sleep(2)
@@ -40,8 +40,8 @@ cam.set(cv2.CAP_PROP_EXPOSURE, exposure)
 f, code_image = cam.read()
 time.sleep(2)
 print(cam.get(cv2.CAP_PROP_BRIGHTNESS))
-plt.imshow(code_image)
-plt.show()
+#plt.imshow(code_image)
+#plt.show()
 detector = cv2.QRCodeDetector()
 data = detector.detectAndDecode(code_image)
 print(data)

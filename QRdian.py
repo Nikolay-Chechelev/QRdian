@@ -5,6 +5,7 @@
 # sudo apt-get install -y build-essential libzbar-dev
 
 from pygame import camera
+from pygame import image
 from pyzbar import pyzbar
 from PIL import Image
 import time
@@ -24,11 +25,11 @@ def routine(*args):
     cam.start()
     while 1:
         print(2)
-        image = cam.get_image()
+        img = cam.get_image()
         print(4)
-        img = pygame.image.tostring(image, "RGB", False)
+        img = image.tostring(img, "RGBA", False)
         print(5)
-        code_image = Image.frombuffer("RGB", (w, h), image)
+        code_image = Image.frombuffer("RGBA", (w, h), img)
         print(6)
         code = pyzbar.decode(code_image)
         print(code)

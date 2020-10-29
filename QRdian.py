@@ -33,6 +33,7 @@ cam.start()
 
 #cam.stop()
 while 1:
+    time.sleep(1)
     cam.get_image()
     img = cam.get_image()
     img = image.tostring(img, "RGBA", False)

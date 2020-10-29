@@ -16,10 +16,10 @@ import cv2
 import time
 import os
 
-os.system('sudo rmmod uvcvideo')
-time.sleep(2)
-os.system('sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
-time.sleep(2)
+#os.system('sudo rmmod uvcvideo')
+#time.sleep(2)
+#os.system('sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
+#time.sleep(2)
 cam = cv2.VideoCapture(0)
 #for i in range(20):
 s, code_image = cam.read()

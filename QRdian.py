@@ -13,7 +13,9 @@
 # sudo apt-get install libqt4-test
 
 import cv2
-
+import time
+cam = cv2.VideoCapture(1)
+time.sleep(5)
 cam = cv2.VideoCapture(0)
 for i in range(20):
     s, code_image = cam.read()

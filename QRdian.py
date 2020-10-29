@@ -14,10 +14,10 @@
 
 import cv2
 
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 s, code_image = cam.read()
-detector = cv2.QRCodeDetector()
-data = detector.detectAndDecode(code_image)
-print(data)
+# detector = cv2.QRCodeDetector()
+# data = detector.detectAndDecode(code_image)
+# print(data)
 cam.release()
 

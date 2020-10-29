@@ -3,9 +3,8 @@
 # pip3 install opencv-python
 # sudo apt-get install git curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0
 # sudo apt-get install -y build-essential libzbar-dev
-
-from pygame import camera
-from pygame import image
+import pygame.camera as camera
+import pygame.image as image
 from pyzbar import pyzbar
 from PIL import Image
 import time
@@ -24,6 +23,7 @@ def routine(*args):
     cam.stop()
     cam.start()
     while 1:
+        time.sleep(2)
         print(2)
         img = cam.get_image()
         print(4)
@@ -33,7 +33,6 @@ def routine(*args):
         print(6)
         code = pyzbar.decode(code_image)
         print(code)
-        time.sleep(2)
 
 
 

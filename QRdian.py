@@ -13,7 +13,7 @@ import threading
 w = 640
 h = 480
 
-pygame.camera.init()
+#pygame.camera.init()
 
 
 def routine(*args):

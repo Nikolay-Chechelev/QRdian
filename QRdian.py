@@ -25,7 +25,7 @@ cam = cv2.VideoCapture(0)
 gain = 174.0
 cam.set(cv2.CAP_PROP_GAIN, gain)
 
-brightness = 100.0
+brightness = 200.0
 cam.set(cv2.CAP_PROP_BRIGHTNESS, brightness)
 
 contrast = 67.0

@@ -27,6 +27,10 @@ cam.start()
 img = cam.get_image()
 cam.stop()
 
-print(image.tostring(img, "RGBA", False))
+img = image.tostring(img, "RGBA", False)
+
+code = pyzbar.decode(img)
+print(code)
+
 
 

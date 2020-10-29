@@ -26,7 +26,7 @@ def routine(*args):
         print(4)
         #img = pygame.image.tostring(image, "RGBA", False)
         print(5)
-        code_image = Image.frombytes("RGBA", (w, h), image)
+        code_image = Image.frombuffer("RGBA", (w, h), image)
         print(6)
         code = pyzbar.decode(code_image)
         print(code)

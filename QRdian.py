@@ -29,14 +29,15 @@ camera.init()
 cam_list = camera.list_cameras()
 
 cam = camera.Camera(cam_list[0], (640, 480))
-cam.start()
+
 i = 0
 #cam.stop()
 while 1:
     i += 1
+    cam.start()
     time.sleep(1)
-    cam.get_image()
     img = cam.get_image()
+    cam.stop()
     img = image.tostring(img, "RGBA", False)
     img = Image.frombytes("RGBA", (640, 480), img)
     code = pyzbar.decode(img)

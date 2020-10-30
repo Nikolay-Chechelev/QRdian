@@ -21,8 +21,8 @@ import os, time
 
 os.system('sudo rmmod uvcvideo')
 time.sleep(2)
-os.system('sudo modprobe uvcvideo')
-time.sleep(2)
+# os.system('sudo modprobe uvcvideo nodrop=2')
+# time.sleep(2)
 
 camera.init()
 

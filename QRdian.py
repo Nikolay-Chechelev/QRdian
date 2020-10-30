@@ -30,10 +30,10 @@ cam_list = camera.list_cameras()
 
 cam = camera.Camera(cam_list[0], (640, 480))
 
-i = 10
+i = 0
 #cam.stop()
-while i:
-    i -= 1
+while 1:
+    i += 1
     cam.start()
     time.sleep(1)
     cam.get_image()
@@ -44,7 +44,7 @@ while i:
     # pygame.display.update()
     img = image.tostring(img, "RGB", False)
     img = Image.frombytes("RGB", (640, 480), img)
-    img.save('{}.jpg'.format(i))
+    #img.save('{}.jpg'.format(i))
     print(img)
     code = pyzbar.decode(img)
     print(i, code)

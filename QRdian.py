@@ -15,6 +15,7 @@
 
 import pygame.camera as camera
 import pygame.image as image
+import pygame
 from PIL import Image
 from pyzbar import pyzbar
 import os, time
@@ -24,6 +25,7 @@ time.sleep(2)
 os.system('sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80')
 time.sleep(2)
 
+pygame.init()
 camera.init()
 
 cam_list = camera.list_cameras()
@@ -38,8 +40,12 @@ while 1:
     time.sleep(1)
     img = cam.get_image()
     cam.stop()
+    screen = pygame.display.set_mode((640, 480), pygame.RESIZABLE)
+    screen.blit((0, 0), img)
+    pygame.display.update()
     img = image.tostring(img, "RGBA", False)
     img = Image.frombytes("RGBA", (640, 480), img)
+
     print(img)
     code = pyzbar.decode(img)
     print(i, code)

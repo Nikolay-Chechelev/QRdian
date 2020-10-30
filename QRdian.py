@@ -20,7 +20,8 @@ from pyzbar import pyzbar
 import os, time
 
 
-
+os.system('sudo modprobe uvcvideo')
+time.sleep(1)
 camera.init()
 
 cam_list = camera.list_cameras()

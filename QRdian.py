@@ -19,9 +19,11 @@ from PIL import Image
 from pyzbar import pyzbar
 import os, time
 
+os.system('sudo rmmod uvcvideo')
+time.sleep(2)
+os.system('sudo modprobe uvcvideo nodrop=1')
+time.sleep(2)
 
-os.system('sudo modprobe uvcvideo')
-time.sleep(1)
 camera.init()
 
 cam_list = camera.list_cameras()
@@ -29,21 +31,18 @@ cam_list = camera.list_cameras()
 cam = camera.Camera(cam_list[0], (640, 480))
 
 i = 0
-#cam.stop()
+
+cam.start()
 while 1:
-    os.system('sudo rmmod uvcvideo')
-    time.sleep(1)
-    os.system('sudo modprobe uvcvideo')
-    time.sleep(1)
     i += 1
-    cam.start()
+    time.sleep(1)
     img = cam.get_image()
-    cam.stop()
+    # cam.stop()
     # screen = pygame.display.set_mode((640, 480), pygame.RESIZABLE)
     # screen.blit((0, 0), img)
     # pygame.display.update()
-    img = image.tostring(img, "RGB", False)
-    img = Image.frombytes("RGB", (640, 480), img)
+    img = image.tostring(img, "RGBA", False)
+    img = Image.frombytes("RGBA", (640, 480), img)
     img.save('1.jpg'.format(i))
     print(img)
     code = pyzbar.decode(img)

@@ -44,7 +44,7 @@ while i:
     # pygame.display.update()
     img = image.tostring(img, "RGB", False)
     img = Image.frombytes("RGB", (640, 480), img)
-    img.save('1.jpg')
+    img.save('{}.jpg'.format(i))
     print(img)
     code = pyzbar.decode(img)
     print(i, code)

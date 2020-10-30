@@ -35,8 +35,6 @@ i = 0
 while 1:
     i += 1
     cam.start()
-    time.sleep(1)
-    cam.get_image()
     img = cam.get_image()
     cam.stop()
     # screen = pygame.display.set_mode((640, 480), pygame.RESIZABLE)

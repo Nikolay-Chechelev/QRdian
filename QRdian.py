@@ -32,10 +32,10 @@ cam_list = camera.list_cameras()
 
 cam = camera.Camera(cam_list[0], (640, 480))
 
-i = 0
+i = 1
 #cam.stop()
-while 1:
-    i += 1
+while i:
+    i -= 1
     cam.start()
     time.sleep(1)
     img = cam.get_image()

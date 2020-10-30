@@ -30,7 +30,7 @@ cam_list = camera.list_cameras()
 
 cam = camera.Camera(cam_list[0], (640, 480))
 
-i = 1
+i = 10
 #cam.stop()
 while i:
     i -= 1

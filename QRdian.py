@@ -40,5 +40,6 @@ while 1:
     cam.stop()
     img = image.tostring(img, "RGBA", False)
     img = Image.frombytes("RGBA", (640, 480), img)
+    print(img)
     code = pyzbar.decode(img)
     print(i, code)

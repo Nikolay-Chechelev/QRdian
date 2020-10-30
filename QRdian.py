@@ -19,10 +19,7 @@ from PIL import Image
 from pyzbar import pyzbar
 import os, time
 
-os.system('sudo rmmod uvcvideo')
-time.sleep(2)
-# os.system('sudo modprobe uvcvideo nodrop=2')
-# time.sleep(2)
+
 
 camera.init()
 
@@ -33,6 +30,10 @@ cam = camera.Camera(cam_list[0], (640, 480))
 i = 0
 #cam.stop()
 while 1:
+    os.system('sudo rmmod uvcvideo')
+    time.sleep(1)
+    os.system('sudo modprobe uvcvideo')
+    time.sleep(1)
     i += 1
     cam.start()
     img = cam.get_image()
